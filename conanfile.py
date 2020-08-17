@@ -325,6 +325,8 @@ class OpenCVConan(ConanFile):
         if self.options.jpeg2000 == "jasper":
             cmake.definitions['BUILD_JASPER'] = False
             cmake.definitions['WITH_JASPER'] = True
+        else:
+            cmake.definitions['WITH_JASPER'] = False
 
         # openjpeg
         if self.options.jpeg2000 == "openjpeg":
@@ -336,6 +338,8 @@ class OpenCVConan(ConanFile):
             cmake.definitions['OPENJPEG_MAJOR_VERSION'] = 2
             cmake.definitions['OPENJPEG_MINOR_VERSION'] = 3
             cmake.definitions['OPENJPEG_BUILD_VERSION'] = 1
+        else:
+            cmake.definitions['WITH_OPENJPEG'] = False
 
         # JPEG
         cmake.definitions['BUILD_JPEG'] = False
